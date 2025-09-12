@@ -1,0 +1,6 @@
+@InventoryMedicalApp_HostAddress = http://localhost:5156
+
+# It runs on port 5156 by
+GET {{InventoryMedicalApp_HostAddress}}/api/articles
+Accept: application/json
+
