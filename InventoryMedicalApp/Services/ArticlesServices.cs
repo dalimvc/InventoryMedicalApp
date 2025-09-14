@@ -37,6 +37,16 @@ namespace InventoryMedicalApp.Services
             return article; //retutning article
         }
 
+        //method to remove an article by its id
+        public async Task<bool> RemoveArticle(int id)
+        {
+            var article = await _context.Articles.FindAsync(id); //finding the article by its id
+            if (article == null) return false; //if not found, return false
+            _context.Articles.Remove(article); //removing the article
+            await _context.SaveChangesAsync(); //saving changes
+            return true; //returning true
+        }
+
 
 
 

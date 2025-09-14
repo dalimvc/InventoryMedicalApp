@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+}
+
+.searchBox{
+    margin: 36px 35% 40px 35%;
+    width: 30% !important;
+}
+.navbar{
+  background-color: rgb(161, 198, 255);
+}
+
+.sortButtons{
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-left: 2px;
+    color: grey;
+    padding: 3px;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f5f9ff 0%, #f5f9ff 50%, #ffffff 100%);
+}
+
+
+.secondH{
+  margin: 39px 0;
+}
+
+.insertBox{
+  margin: 30px auto 50px auto;
+}
+
+.created-article-table{
+      width: 60vw;
+    margin: 39px 20vw;
+}
+
+.confirmBox > Button{ 
+  margin: 0 15px 0 0;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}

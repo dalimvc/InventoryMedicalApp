@@ -43,12 +43,22 @@ namespace InventoryMedicalApp.Controllers
 
         //updating the saldo of an article
         [HttpPut("{id}/saldo")]
-        public async Task<IActionResult> UpdateSaldo(int id, [FromBody] int newSaldo)
+        public async Task<IActionResult> UpdateSaldo(int id, [FromBody] UpdateSaldoDto dto)
         {
-            if (newSaldo < 0) return BadRequest("Saldo får inte vara negativt.");
-            var updatedArticle = await _service.UpdateSaldo(id, newSaldo);
+            if (dto.Antal < 0) return BadRequest("Saldo får inte vara negativt.");
+            var updatedArticle = await _service.UpdateSaldo(id, dto.Antal);
             if (updatedArticle == null) return NotFound();
             return Ok(updatedArticle);
         }
+
+        //removing an article by its id
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> RemoveArticle(int id)
+        {
+            var result = await _service.RemoveArticle(id);
+            if (!result) return NotFound();
+            return NoContent();
+        }
+
     }
 }

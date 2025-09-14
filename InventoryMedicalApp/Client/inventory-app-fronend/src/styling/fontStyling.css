@@ -1,0 +1,51 @@
+:root {
+  --font-base: 16px;
+
+  --font-h1: calc(var(--font-base) * 4);     
+  --font-h2: calc(var(--font-base) * 3.5);   
+  --font-h3: calc(var(--font-base) * 3);     
+  --font-h4: calc(var(--font-base) * 2.5); 
+  --font-h5: calc(var(--font-base) * 2);   
+  --font-h6: calc(var(--font-base) * 1.75); 
+
+  --font-body: calc(var(--font-base) * 1.5);    
+  --font-small: calc(var(--font-base) * 1.25);  
+  --font-xsmall: calc(var(--font-base) * 1.125); 
+
+  --font-btn: calc(var(--font-base) * 1.25);   
+  --font-table: calc(var(--font-base) * 1.25);  
+}
+
+
+
+
+body {
+  font-size: var(--font-body);
+
+}
+
+h1 { font-size: var(--font-h1); }
+h2 { font-size: var(--font-h2); }
+h3 { font-size: var(--font-h3); }
+h4 { font-size: var(--font-h4); }
+h5 { font-size: var(--font-h5); }
+h6 { font-size: var(--font-h6); }
+.nav-item { font-size: var(--font-body); }
+
+p { font-size: var(--font-body); }
+
+small { font-size: var(--font-small); }
+
+button, .btn {
+  font-size: var(--font-btn);
+}
+
+table {
+  font-size: var(--font-table);
+}
+
+.large-input {
+  font-size: var(--font-body);
+  padding: 0.5rem 1rem;
+}
+

@@ -9,6 +9,19 @@ var builder = WebApplication.CreateBuilder(args);
 //adding services
 builder.Services.AddControllers();
 
+
+//to enable CORS for the React app running on localhost:3000
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+      builder =>
+      {
+          builder.WithOrigins("http://localhost:3000", "https://localhost:3000")
+                     .AllowAnyHeader()
+           .AllowAnyMethod();
+      });
+});
+
 //adding and configuring the database context to use SQLite
 builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlite("Data Source=articles.db"));
 
@@ -47,6 +60,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+//to allow CORS and enable HTTPS redirection and authorization
+//!!!!!important
+
+app.UseCors("AllowReactApp");
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
