@@ -3,6 +3,8 @@
 import SearchBox from "./SearchBox";
 import ArticlesTableUpdate from "./ArticlesTableUpdate";
 import { handleQuantityChange, handleUpdate } from "./logicMethods";
+import useFetch from "./useFetch";
+import { useState, useEffect } from "react";
 
 const UpdateArticle = () => {
   const { data: fetchedArticles, isPending, error, updateArticle } = useFetch(
